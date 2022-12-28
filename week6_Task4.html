@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Task4
+</title>
+
+</html>
+
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    const fifa_scorers = [
+        { name: 'Kylian Mbappe' },
+        { name: 'Messi' },
+        { name: 'Olivier' },
+        { name: 'Julain' },
+        { name: 'Marcus' }
+    ];
+    fifa_scorers.map(func1);
+    fifa_scorers.map(func);
+    fifa_scorers.forEach(func);
+    function func(item, index, arr) {
+        arr[index]['hero'] = arr[index]['name'];
+        return arr[index]['hero'];
+    }
+    let i=0;
+    for(i=0;i<fifa_scorers.length;i++){
+        delete fifa_scorers[i].name;
+    }
+    fifa_scorers.forEach(func1);
+    function func1(item, index, arr) {
+        if(index==0 || index==1){
+            arr[index]['goals'] = 5;
+        }
+        else if(index==2 || index==3){
+            arr[index]['goals'] = 4;
+        }
+        else{
+            arr[index]['goals'] = 3;
+        }
+        return arr[index]['goals'];
+    }
+    document.getElementById('demo').innerHTML += JSON.stringify(fifa_scorers);
+    console.log(fifa_scorers);
+</script>
